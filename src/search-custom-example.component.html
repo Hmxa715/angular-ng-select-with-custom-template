@@ -1,0 +1,18 @@
+<p>Use search term and filter on custom fields. Type <b>female</b> to see only females.</p>
+
+<ng-select [items]="people"
+           bindLabel="name" bindValue="name"
+           [loading]="peopleLoading">
+    <ng-template ng-label-tmp ng-option-tmp let-item="item">
+        <span class="image" style="display: flex;align-items: center;">
+            <img [src]="item.picture" style ="width: 35px;height: 35px;border-radius: 50%;"/>
+            <span style="margin: 5px;"><b style="text-align: left;font: normal normal bold 14px/17px Inter;letter-spacing: 0px;color: #000000;opacity: 1;display: flex;flex-direction: column;align-content: center;justify-content: center;">
+                {{item.name}}
+            </b>
+            <span style="text-align: left;font: normal normal 500 12px/17px Inter;letter-spacing: 0px;color: #999999;opacity: 1;display: flex;flex-direction: column;align-content: center;justify-content: center;">{{item.gender}}
+            </span></span></span>
+        <!-- <img height="30" width="30" [src]="item.picture" style="position: relative; top: 10px;"/>
+        {{item.name}} <br/>
+        <small style="left: 35px;position: relative;">{{item.gender}}</small> -->
+    </ng-template>
+</ng-select>
